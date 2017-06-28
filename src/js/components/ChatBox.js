@@ -2,15 +2,16 @@ import React from "react";
 import io from 'socket.io-client'
 import TextMessage from './TextMessage'
 import UserInput from './UserInput'
+import {serverURL} from '../../app_environemnt'
 
 export default class ChatBox extends React.Component {
 
   constructor() {
     super();
-
+    
     this.state = {
       messages: [],
-      socket: io('http://localhost:3000'),
+      socket: io(serverURL),
       currentUser: sessionStorage.getItem("user")
     };
 
