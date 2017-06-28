@@ -35,7 +35,7 @@ export default class TextMessage extends React.Component {
                      <div className="msg-rta macro">
                       <div className="text text-r">
                        <p> {message.msg}</p>
-                        <p><small>{message.user}</small></p>
+                        <p><small>{'~'+message.user}</small></p>
                       </div></div>
                 )
               }
