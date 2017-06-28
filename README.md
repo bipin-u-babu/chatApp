@@ -5,7 +5,7 @@ This chat application allow users inthe same network to send messages, user has 
 # Instructions to run
 1. Navigate to folder */chatApp*
 2. *NPM install*
-3. Edit serverURL in app_environemnt.js file , eg:- http://192.168.0.3:3000
+3. Edit serverURL with your server Ip and port 3000 in app_environemnt.js file , eg:- http://192.168.0.3:3000
 3. *NPM run start*
 4. Navigate to localhost:3000
 
