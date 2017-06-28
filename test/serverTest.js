@@ -1,11 +1,10 @@
 var chai = require('chai'),
     mocha = require('mocha'),
     should = chai.should();
+
 var io = require('socket.io-client');
 
-
-describe("socket.io test", function () {
-
+describe("Server socket.io test", function () {
     var server,
         options = {
             transports: ['websocket'],
@@ -17,7 +16,6 @@ describe("socket.io test", function () {
         server = require('../server').server;
         done();
     });
-
     it("should be able to send and recieve message", function (done) {
         var client = io.connect("http://localhost:3000", options);
         client.once("connect", function () {

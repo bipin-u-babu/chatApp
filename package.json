@@ -4,11 +4,15 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
-    "socket.io": "^2.0.3",
+    "babel-polyfill": "^6.23.0",
+    "express": "^4.15.3",
     "http": "0.0.0",
-    "express": "^4.15.3"
+    "mocha": "^3.4.2",
+    "socket.io": "^2.0.3"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.0",
     "babel-plugin-add-module-exports": "^0.1.2",
@@ -20,13 +24,17 @@
     "babel-preset-stage-0": "^6.3.13",
     "chai": "^4.0.2",
     "css-loader": "^0.28.4",
-    "mocha": "^3.4.2",
+    "enzyme": "^2.7.0",
+    "jsdom": "^6.5.1",
+    "mock-local-storage": "^1.0.2",
     "node-sass": "^4.5.3",
     "react": "^0.14.6",
+    "react-addons-test-utils": "^0.14.8",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^0.14.6",
     "sass-loader": "^6.0.6",
-    "shorti": "^1.2.6",
+    "should": "^11.2.1",
+    "sinon": "^1.17.0",
     "socket.io-client": "^2.0.3",
     "style-loader": "^0.18.2",
     "webpack": "^1.12.9",
@@ -34,7 +42,8 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --content-base src --inline --hot",
-    "test": "mocha test",
+    "compile": "babel --presets es2015,stage-0 -d lib/ src/",
+    "test": "mocha --compilers js:babel-core/register test/**/*.js",
     "start": "npm run build && node server.js",
     "build": "webpack --config webpack.config.js"
   },
